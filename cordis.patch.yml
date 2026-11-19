@@ -1,0 +1,13 @@
+# llm-failure-command — one host row.
+#
+# The plugin watches the agent loop's `agent/request-error` waterfall and, when a
+# model request fails with a connection-class error, runs the operator's repair
+# command and asks the loop to retry the same request. The command, its timeout,
+# and the retry budget live in the "模型调用失败恢复" settings section, which the
+# browser half registers.
+#
+# Installing this package as a profile bundle adds this row; the package name is
+# resolved by the Loader from the profile's node_modules.
+- insert:
+    - id: llm-failure-command
+      name: @imaegoo/dsh-llm-failure-command

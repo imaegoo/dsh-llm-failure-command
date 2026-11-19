@@ -1,0 +1,57 @@
+{
+  "name": "@imaegoo/dsh-llm-failure-command",
+  "version": "1.2.0",
+  "description": "Run a configurable shell command automatically when a model call fails, then retry the request (e.g. restore an adb port forward).",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "iMaeGoo",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/imaegoo/dsh-llm-failure-command.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imaegoo/dsh-llm-failure-command/issues"
+  },
+  "homepage": "https://github.com/imaegoo/dsh-llm-failure-command#readme",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "scripts": {
+    "test": "node test/harness.mjs && node test/render.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.15"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "adb",
+    "retry",
+    "recovery"
+  ]
+}

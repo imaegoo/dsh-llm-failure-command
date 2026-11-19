@@ -8,6 +8,8 @@
 #
 # Installing this package as a profile bundle adds this row; the package name is
 # resolved by the Loader from the profile's node_modules.
+# `name` is quoted because a leading `@` is a reserved YAML indicator: an
+# unquoted value may not start with it.
 - insert:
     - id: llm-failure-command
-      name: @imaegoo/dsh-llm-failure-command
+      name: '@imaegoo/dsh-llm-failure-command'

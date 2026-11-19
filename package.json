@@ -1,6 +1,6 @@
 {
   "name": "@imaegoo/dsh-llm-failure-command",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Run a configurable shell command automatically when a model call fails, then retry the request (e.g. restore an adb port forward).",
   "type": "module",
   "main": "lib/index.js",
@@ -21,7 +21,10 @@
     "./cordis.patch.yml": "./cordis.patch.yml"
   },
   "scripts": {
-    "test": "node test/harness.mjs && node test/render.mjs"
+    "test": "node test/patch.mjs && node test/harness.mjs && node test/render.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
   },
   "publishConfig": {
     "access": "public",
